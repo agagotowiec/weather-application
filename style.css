@@ -1,8 +1,8 @@
 :root {
-	--background-color: #fecea8;
-	--secondary-background-color: #ff847c;
-	--secondary-text-color: #e84a5f;
-	--primary-text-color: #45171d;
+	--background-color: #1b3e79;
+	--primary-text-color: black;
+	--secondary-text-color: white;
+	--info-text-color: #f03a17;
 }
 
 .wrapper {
@@ -14,48 +14,108 @@
 	border-radius: 20px;
 	background-color: var(--background-color);
 	max-width: 80%;
+	font-family: "DM Sans", sans-serif;
 }
 
 .input-engine {
-	border-radius: 10px;
 	text-align: center;
-	padding: 10px auto;
+	padding: 5px auto;
+	font-size: 16px;
+	border: 2px solid var(--background-color);
 }
 
 .submit-button,
 .location-button {
+	border: 1px solid var(--secondary-text-color);
 	background-color: var(--background-color);
-	border: 1px solid var(--background-color);
 	margin: 0 2px;
+	padding: 2px 2px;
+	height: 28px;
+	width: 28px;
 }
 
 h1 {
-	color: var(--primary-text-color);
-	font-size: 30px;
-	font-family: "Poppins", sans-serif;
+	color: var(--secondary-text-color);
+	text-shadow: 2px 2px var(--primary-text-color);
+	font-size: 5px;
 }
 
 h3 {
 	color: var(--secondary-text-color);
+	text-shadow: 2px 2px var(--primary-text-color);
 }
 
 .weather-details {
 	font-size: 15px;
 	list-style: none;
+	color: var(--secondary-text-color);
+	text-shadow: 1px 1px var(--primary-text-color);
+	text-align: left;
 }
 
 .temperature-value {
-	font-size: 50px;
-	color: var(--primary-text-color);
+	font-size: 60px;
+	color: var(--secondary-text-color);
 	font-weight: bold;
 	padding: 2px auto;
+	text-shadow: 2px 2px var(--primary-text-color);
 }
 
-.temperature-units a {
-	text-decoration: none;
-	color: var(--primary-text-color);
+#c-units,
+#f-units {
+	color: var(--info-text-color);
 	font-weight: bold;
 	font-size: 12px;
-	position: relative;
-	top: -30px;
+	border: 1px solid var(--secondary-text-color);
+	background-color: var(--background-color);
+	height: 28px;
+	width: 28px;
+}
+
+#weather-description {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: var(--info-text-color);
+}
+.footer a {
+	text-decoration: none;
+	color: var(--background-color);
+}
+.footer {
+	display: flex;
+	justify-content: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 13px;
+	word-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+	.input-engine {
+		font-size: 10px;
+		max-width: 60%;
+	}
+	#submit-button,
+	#location-button {
+		max-width: 50%;
+	}
+	#location-name {
+		font-size: 40px;
+	}
+	#date-and-time {
+		font-size: 10px;
+	}
+	#temperature-value {
+		font-size: 50px;
+	}
+	#c-units,
+	#f-units {
+		max-width: 50%;
+	}
+	#weather-description {
+		font-size: 10px;
+	}
+	.weather-details {
+		font-size: 16px;
+	}
 }
