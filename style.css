@@ -121,7 +121,7 @@ h3 {
 
 @media (max-width: 600px) {
 	.wrapper {
-		height: 350px;
+		height: 370px;
 	}
 	.input-engine {
 		font-size: 12px;
