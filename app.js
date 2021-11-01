@@ -1,4 +1,4 @@
-///DATE AND TIME
+//DATE AND TIME UPDATE//
 let now = new Date();
 let h3 = document.querySelector("#date-and-time");
 
@@ -35,7 +35,8 @@ let minutes = now.getMinutes();
 }
 
 h3.innerHTML = `${day}, ${date} ${month} | ${hours}:${minutes} `;
-////////////////////FIND MY LOCATION
+
+//LOCATION FINDER//
 
 function showMyLocation(response) {
 	let h1 = document.querySelector("#location-name");
@@ -65,7 +66,7 @@ function getForecast(coordinates) {
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getLocation);
 
-/////SEARCH A CITY
+//CITY SEARCH//
 function searchMe(event) {
 	event.preventDefault();
 	let searchInput = document.querySelector("#search-form");
@@ -80,9 +81,9 @@ function searchMe(event) {
 let search = document.querySelector("#search-engine");
 search.addEventListener("submit", searchMe);
 
-/////////////////////////WEATHER DESCRIPTION
+//WEATHER DESCRIPTION, TEMP AND ICON UPDATE BASED ON SEARCH INPUT & LOCATION//
+
 function showTemperature(response) {
-	console.log(response.data);
 	let temperatureEl = document.querySelector("#temperature-value");
 	let roundedTemperature = Math.round(response.data.main.temp);
 	let weatherDescription = document.querySelector("#weather-description");
@@ -108,4 +109,47 @@ function showTemperature(response) {
 		`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
 	);
 	iconElement.setAttribute("alt", response.data.weather[0].description);
+
+	getForecast(response.data.coord);
+}
+
+//5 DAYS WEATHER FORECAST//
+function formatDay(timestamp) {
+	let date = new Date(timestamp * 1000);
+	let day = date.getDay();
+	let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+	return days[day];
+}
+
+function displayForecast(response) {
+	let forecast = response.data.daily;
+
+	let forecastElement = document.querySelector("#next-5-days");
+
+	let forecastHTML = `<div class="row">`;
+	forecast.forEach(function (forecastDay, index) {
+		if (index < 6) {
+			forecastHTML =
+				forecastHTML +
+				`
+      <div class="col-2">
+        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+        <img
+          src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> ${Math.round(
+						forecastDay.temp.max
+					)}° </span>
+        </div>
+      </div>
+  `;
+		}
+	});
+
+	forecastHTML = forecastHTML + `</div>`;
+	forecastElement.innerHTML = forecastHTML;
 }
