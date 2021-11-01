@@ -87,7 +87,6 @@ function showTemperature(response) {
 	let temperatureEl = document.querySelector("#temperature-value");
 	let roundedTemperature = Math.round(response.data.main.temp);
 	let weatherDescription = document.querySelector("#weather-description");
-	let todayFeelsLike = document.querySelector("#feels-like");
 	let feelsLikeRounded = Math.round(response.data.main.feels_like);
 	let windToday = document.querySelector("#wind-speed");
 	let roundedWind = Math.round(response.data.wind.speed);
@@ -99,11 +98,10 @@ function showTemperature(response) {
 	let maxroundedTemperatureToday = Math.round(response.data.main.temp_max);
 
 	temperatureEl.innerHTML = `${roundedTemperature}°C`;
-	temperaturetoday.innerHTML = `| min <i class="fas fa-arrow-down"></i> ${minroundedTemperatureToday}°C | max <i class="fas fa-arrow-up"></i> ${maxroundedTemperatureToday}°C | `;
+	temperaturetoday.innerHTML = `| TODAY: min <i class="fas fa-arrow-down"></i> ${minroundedTemperatureToday}°C | max <i class="fas fa-arrow-up"></i> ${maxroundedTemperatureToday}°C | `;
 	weatherDescription.innerHTML = response.data.weather[0].description;
-	todayFeelsLike.innerHTML = `Real feel: ${feelsLikeRounded}°C`;
-	windToday.innerHTML = `<i class="fas fa-wind"></i> ${roundedWind} km/h`;
-	humidityToday.innerHTML = `<i class="fas fa-tint"></i> ${response.data.main.humidity} %`;
+	windToday.innerHTML = `<i class="fas fa-wind"></i> <strong> ${roundedWind} km/h</strong>`;
+	humidityToday.innerHTML = `<i class="fas fa-tint"></i> <strong> ${response.data.main.humidity} % </strong>`;
 	iconElement.setAttribute(
 		"src",
 		`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -138,7 +136,7 @@ function displayForecast(response) {
         <img
           src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
           alt=""
-          width="40px"
+         width="31" height="31"
         />
         <div class="weather-forecast-temperature"> ${Math.round(forecastDay.temp.max)}°C
         </div>

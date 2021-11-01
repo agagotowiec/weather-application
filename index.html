@@ -27,8 +27,8 @@
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	</head>
 	<body>
-		<div class="wrapper">
-			<h3 class="pt-3 fs-6 text-monospace" id="date-and-time"></h3>
+		<div class="wrapper align-items-center">
+			<h3 class="pt-3 text-monospace text-uppercase" id="date-and-time"></h3>
 			<div class="search-input">
 				<form id="search-engine">
 					<input
@@ -43,16 +43,17 @@
 			</div>
 			<h1 id="location-name" class="mt-2"></h1>
 			<h4 class="temperature-today mt-2" id="temperature-today"></h4>
-			<div class="row mt-3">
-				<div class="col-sm-6">
+			<div class="row align-items-center mt-3">
+				<div class="col-6">
+					<span class="temperature-value" id="temperature-value"></span>
 					<span class="weather-icon clearfix">
 						<img src="" alt="" id="weather-icon" class="float-start ms-3" />
-						<span class="temperature-value" id="temperature-value"></span>
-					</div>
-					<div class="col-sm-6">
+						</span>
+						
+						</div>
+					<div class="col-6">
 						<ul class="weather-details">
 							<li id="weather-description" class="text-monospace"></li>
-							<li id="feels-like" class="text-monospace"></li>
 							<li id="wind-speed"></li>
 							<li id="humidity"></li>
 						</ul>
