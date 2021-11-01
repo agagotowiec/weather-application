@@ -39,7 +39,8 @@ h3 {
 	border: 2px solid var(--background-color);
 }
 
-.location-button {
+.location-button,
+.search-button {
 	border: 1px solid var(--secondary-text-color);
 	background-color: var(--background-color);
 	margin: 0 2px;
@@ -113,7 +114,7 @@ h3 {
 	justify-content: center;
 	font-weight: bold;
 	text-transform: uppercase;
-	font-size: 13px;
+	font-size: 11px;
 	word-spacing: 2px;
 	margin-top: -10px;
 	color: var(--background-color);
