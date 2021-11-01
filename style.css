@@ -120,6 +120,9 @@ h3 {
 }
 
 @media (max-width: 600px) {
+	.wrapper {
+		height: 350px;
+	}
 	.input-engine {
 		font-size: 12px;
 		text-align: center;
@@ -139,6 +142,7 @@ h3 {
 	}
 	#temperature-value {
 		font-size: 45px;
+		padding: 0 20px;
 	}
 
 	.weather-details,
@@ -152,6 +156,10 @@ h3 {
 	}
 	#next-5-days {
 		font-size: 12px;
-		padding: 0 10px;
+		margin: 0 10px;
+	}
+	#next-5-days img {
+		position: relative;
+		left: -5px;
 	}
 }
