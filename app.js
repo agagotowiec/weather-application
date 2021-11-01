@@ -90,12 +90,17 @@ function showTemperature(response) {
 	let windToday = document.querySelector("#wind-speed");
 	let roundedWind = Math.round(response.data.wind.speed);
 	let humidityToday = document.querySelector("#humidity");
-	let iconElement = document.querySelector("#icon");
+	let iconElement = document.querySelector("#weather-icon");
 	celsiusTemperature = response.data.main.temp;
 
-	temperatureEl.innerHTML = `${roundedTemperature}`;
+	temperatureEl.innerHTML = `${roundedTemperature}°C`;
 	weatherDescription.innerHTML = response.data.weather[0].description;
 	todayFeelsLike.innerHTML = `FEELS LIKE: ${feelsLikeRounded}°C`;
 	windToday.innerHTML = `💨 ${roundedWind} km/h`;
 	humidityToday.innerHTML = `💧 ${response.data.main.humidity} %`;
+	iconElement.setAttribute(
+		"src",
+		`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+	);
+	iconElement.setAttribute("alt", response.data.weather[0].description);
 }
