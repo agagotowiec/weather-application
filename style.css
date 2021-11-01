@@ -121,14 +121,15 @@ h3 {
 
 @media (max-width: 600px) {
 	.input-engine {
-		font-size: 10px;
+		font-size: 14px;
+		text-align: center;
 	}
 	#submit-button,
 	#location-button {
 		max-width: 50%;
 	}
 	#location-name {
-		font-size: 40px;
+		font-size: 30px;
 	}
 	#date-and-time {
 		font-size: 10px;
