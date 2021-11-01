@@ -15,7 +15,7 @@ body {
 .wrapper {
 	display: block;
 	margin: 20px auto;
-	height: 420px;
+	height: 400px;
 	width: 500px;
 	text-align: center;
 	border-radius: 20px;
@@ -140,14 +140,17 @@ h3 {
 		font-size: 45px;
 	}
 
-	.weather-details {
-		font-size: 14px;
-		display: inline-flexbox;
-		justify-content: center;
+	.weather-details,
+	#weather-description {
+		font-size: 12px;
 	}
 	.weather-forecast {
 		padding: 0 10px;
 		display: inline-flexbox;
 		justify-content: space-evenly;
+	}
+	#next-5-days {
+		font-size: 12px;
+		padding: 0 10px;
 	}
 }
