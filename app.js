@@ -138,15 +138,11 @@ function displayForecast(response) {
         <img
           src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
           alt=""
-          width="42"
+          width="40px"
         />
-        <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> ${Math.round(
-						forecastDay.temp.max
-					)}° </span>
+        <div class="weather-forecast-temperature"> ${Math.round(forecastDay.temp.max)}°C
         </div>
-      </div>
-  `;
+      </div>`;
 		}
 	});
 
